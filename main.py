@@ -6,7 +6,7 @@ workbook = load_workbook(filename=file)
 sheet = workbook.active
 
 departments = []
-mbu = int(input('mbu:'))
+mbu = int(input('mbu: '))
 
 for row in sheet.iter_rows(min_row=4, min_col=5, max_col=7,values_only=True):
     if row[0] == mbu:
