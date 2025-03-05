@@ -19,11 +19,14 @@ def getDepartment():
 # Create window
 root = tk.Tk()
 root.title('MBU to Department')
-root.geometry('400x300+50+50')
+root.geometry('500x300+50+50')
 
 # Create frame
 content = ttk.Frame(root)
 content.grid(column = 0, row = 0)
+
+# Create note frame
+note = ttk.Label(content, text = 'Please ensure you have downloaded the University Subdepartment List and saved it as a .xlsx file in the same directory as this application.', wraplength = 400).grid(column = 0, row = 0, columnspan = 3)
 
 # Create mbu frame
 mbu = tk.IntVar()
@@ -32,7 +35,7 @@ mbu_entry = ttk.Entry(content, textvariable = mbu).grid(column = 1, row = 1, col
 mbu_search_button = ttk.Button(content, text = 'Search', command = getDepartment).grid(column = 3, row = 1, sticky = 'w')
 
 # Create department frame
-department_label = ttk.Label(content, text = '', wraplength = 300)
+department_label = ttk.Label(content, text = '', wraplength = 400)
 department_label.grid(column = 0, row = 2, columnspan = 5, rowspan = 5, sticky = 'W')
 
 root.mainloop()
