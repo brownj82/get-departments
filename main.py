@@ -14,13 +14,12 @@ def getDepartment():
             departments.append(row[2])
     result = ', '.join(map(str, set(departments)))
     pyperclip.copy(result)
-    print(result)
     department_label.configure(text = f'The following departments were copied to the clipboard:\n{result}')
 
 # Create window
 root = tk.Tk()
 root.title('MBU to Department')
-root.geometry('600x500+50+50')
+root.geometry('400x300+50+50')
 
 # Create frame
 content = ttk.Frame(root)
@@ -33,7 +32,7 @@ mbu_entry = ttk.Entry(content, textvariable = mbu).grid(column = 1, row = 1, col
 mbu_search_button = ttk.Button(content, text = 'Search', command = getDepartment).grid(column = 3, row = 1, sticky = 'w')
 
 # Create department frame
-department_label = ttk.Label(content, text = 'Department')
+department_label = ttk.Label(content, text = '', wraplength = 300)
 department_label.grid(column = 0, row = 2, columnspan = 5, rowspan = 5, sticky = 'W')
 
 root.mainloop()
